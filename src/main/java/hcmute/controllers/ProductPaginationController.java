@@ -41,6 +41,6 @@ public class ProductPaginationController extends HttpServlet {
         req.setAttribute("endPage", endPage);
         req.setAttribute("currentPage", currentPage);
         
-        req.getRequestDispatcher("/views/product-list.jsp").forward(req, resp);
+        req.getRequestDispatcher("/views/web/product-list.jsp").forward(req, resp);
     }
 }

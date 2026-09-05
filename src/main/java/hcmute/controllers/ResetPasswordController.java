@@ -16,7 +16,7 @@ public class ResetPasswordController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("/views/reset-password.jsp").forward(req, resp);
+        req.getRequestDispatcher("/views/web/reset-password.jsp").forward(req, resp);
     }
 
     @Override
@@ -34,7 +34,7 @@ public class ResetPasswordController extends HttpServlet {
             resp.sendRedirect(req.getContextPath() + "/login?message=Doi mat khau thanh cong!");
         } else {
             req.setAttribute("error", "Mã OTP không chính xác!");
-            req.getRequestDispatcher("/views/reset-password.jsp").forward(req, resp);
+            req.getRequestDispatcher("/views/web/reset-password.jsp").forward(req, resp);
         }
     }
 }

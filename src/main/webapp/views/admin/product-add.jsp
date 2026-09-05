@@ -18,12 +18,13 @@
 <body>
     <div class="form-box">
         <h2>Thêm Sản Phẩm Mới</h2>
-        <form action="${pageContext.request.contextPath}/admin/product-add" method="post">
-        	<!-- Đổi input nhập text thành input file -->
-   			 <div class="form-group">
-       			 <label>Hình ảnh sản phẩm</label>
-        		<input type="file" name="image" required>
-    		</div>
+        <!-- Sửa URL thành /admin/product/add và thêm enctype="multipart/form-data" -->
+        <form action="${pageContext.request.contextPath}/admin/product/add" method="post" enctype="multipart/form-data">
+            
+            <div class="form-group">
+                <label>Hình ảnh sản phẩm</label>
+                <input type="file" name="image" required>
+            </div>
     		
             <div class="form-group">
                 <label>Tên sản phẩm</label>
@@ -34,11 +35,6 @@
                 <label>Giá bán (VNĐ)</label>
                 <input type="number" name="price" required>
             </div>
-            
-            <div class="form-group">
-                <label>Hình ảnh (Nhập URL hoặc tên file)</label>
-                <input type="text" name="image">
-            </div>
 
             <div class="form-group">
                 <label>Mô tả</label>
@@ -48,9 +44,8 @@
             <div class="form-group">
                 <label>Thuộc Danh mục</label>
                 <select name="cate_id" required>
-                    <!-- Lấy cateList từ Controller đổ ra -->
                     <c:forEach items="${cateList}" var="cate">
-                        <option value="${cate.cateId}">${cate.cateName}</option>
+                        <option value="${cate.id}">${cate.name}</option>
                     </c:forEach>
                 </select>
             </div>

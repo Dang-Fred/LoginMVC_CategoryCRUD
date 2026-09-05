@@ -19,7 +19,7 @@ public class VerifyController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // Chuyển hướng đến file giao diện nhập OTP
-        req.getRequestDispatcher("/views/verify.jsp").forward(req, resp);
+        req.getRequestDispatcher("/views/web/verify.jsp").forward(req, resp);
     }
 
     @Override
@@ -52,7 +52,7 @@ public class VerifyController extends HttpServlet {
         } else {
             // Sai OTP -> Báo lỗi màu đỏ và giữ lại trang verify
             req.setAttribute("error", "Mã OTP không chính xác. Vui lòng thử lại!");
-            req.getRequestDispatcher("/views/verify.jsp").forward(req, resp);
+            req.getRequestDispatcher("/views/web/verify.jsp").forward(req, resp);
         }
     }
 }
