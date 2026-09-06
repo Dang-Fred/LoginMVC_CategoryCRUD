@@ -1,7 +1,0 @@
-<sitemesh>
-    <!-- Phân chia Layout cho Admin và Web/User -->
-    <mapping path="/admin/*" decorator="/decorators/admin.jsp"/>
-    <mapping path="/*" decorator="/decorators/web.jsp"/>
-    <!-- Loại trừ các trang không cần layout (như Login, Error) -->
-    <mapping path="/login" exclue="true"/>
-</sitemesh>

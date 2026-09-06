@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemesh>
+    <!-- 1. Loại trừ đưa lên đầu tiên -->
+    <mapping path="/login*" exclude="true"/>
+    
+    <!-- 2. Giao diện Admin -->
+    <mapping path="/admin/*" decorator="/decorators/admin.jsp"/>
+    
+    <!-- 3. Giao diện Người dùng (Bắt tất cả các link còn lại) -->
+    <mapping path="/*" decorator="/decorators/web.jsp"/>
+</sitemesh>
