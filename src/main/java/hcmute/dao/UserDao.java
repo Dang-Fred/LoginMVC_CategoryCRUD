@@ -15,4 +15,5 @@ public interface UserDao {
     
     void updatePassword(String email, String newPassword);
     void updateVcode(String email, String vcode);
+    void update(User user);
 }

@@ -28,6 +28,12 @@
         </p>
         
         <br>
+        
+		<!-- Nút dẫn tới trang Profile -->
+		<a href="${pageContext.request.contextPath}/profile" 
+  			 style="padding: 10px 20px; background-color: #17a2b8; color: white; text-decoration: none; border-radius: 5px; margin-right: 10px; font-weight: bold;">
+  			 👤 Cập nhật Profile
+		</a>
         <a href="${pageContext.request.contextPath}/logout" 
            style="padding: 10px 20px; background-color: #dc3545; color: white; text-decoration: none; border-radius: 5px;">
            Đăng xuất

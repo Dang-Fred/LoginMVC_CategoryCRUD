@@ -1,10 +1,20 @@
 package hcmute.models;
 
 import java.io.Serializable;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import java.sql.Date;
 
 @SuppressWarnings("serial")
+@Entity // Khai báo đây là một thực thể JPA
+@Table(name = "\"User\"")
 public class User implements Serializable {
+	@Id // Khai báo khóa chính
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	
     private int id;
     private String email;
     private String userName;

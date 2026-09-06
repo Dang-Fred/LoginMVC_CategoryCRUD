@@ -94,5 +94,9 @@ public class UserServiceImpl implements UserService {
         userDao.updateVcode(email, vcode);
     }
     
+    @Override
+    public void update(User user) {
+        userDao.update(user);
+    }
     
 }

@@ -6,6 +6,9 @@ import java.sql.ResultSet;
 
 import hcmute.models.User;
 import hcmute.utils.DBConnection;
+import hcmute.utils.JPAConfig;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityTransaction;
 
 public class UserDaoImpl implements UserDao {
     public Connection conn = null;
@@ -185,5 +188,25 @@ public class UserDaoImpl implements UserDao {
             ps.setString(2, email);
             ps.executeUpdate();
         } catch (Exception e) { e.printStackTrace(); }
+    }
+    
+    @Override
+    public void update(User user) {
+        // Lưu ý: Đổi JPAConfig thành class cấu hình EntityManager của bạn nếu tên khác
+        EntityManager enma = JPAConfig.getEntityManager(); 
+        EntityTransaction trans = enma.getTransaction();
+        try {
+            trans.begin();
+            // Lệnh merge() của JPA sẽ tự động kiểm tra, 
+            // nếu đối tượng đã có ID trong CSDL, nó sẽ thực hiện UPDATE
+            enma.merge(user); 
+            trans.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+            trans.rollback();
+            throw e;
+        } finally {
+            enma.close();
+        }
     }
 }
