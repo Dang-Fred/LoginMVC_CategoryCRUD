@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,6 +21,8 @@
         .btn-buy:hover { background-color: #218838; }
         .btn-back { display: inline-block; margin-bottom: 20px; color: #0866ff; text-decoration: none; font-weight: bold; }
     </style>
+    
+    
 </head>
 <body>
     <div style="max-width: 900px; margin: auto;">
@@ -42,8 +45,12 @@
         <!-- Cột hiển thị thông tin -->
         <div class="info-col">
             <h1 class="product-name">${product.name}</h1>
-            <div class="product-price">${product.price} VNĐ</div>
-            
+            <div class="info-row">
+    			<strong>Giá bán:</strong> 
+   				 <span class="product-price" style="margin: 0; font-size: 20px;">
+       				 <fmt:formatNumber value="${product.price}" pattern="#,###" /> VNĐ
+   				 </span>
+			</div>
             <div class="info-row">
                 <strong>Danh mục:</strong> ${product.category.name}
             </div>

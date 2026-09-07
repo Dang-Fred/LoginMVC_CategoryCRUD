@@ -9,14 +9,18 @@
     <link href="${pageContext.request.contextPath}/templates/css/style.css" rel="stylesheet" type="text/css">
     <sitemesh:write property='head'/>
 </head>
-<body>
 
-    <%@ include file="/commons/web/header.jsp"%>
+<!-- Khung đỏ để nhận diện Layout đã ốp thành công -->
+<body style="border: 10px solid red; padding: 10px;">
     
-    <!-- Đây là vị trí Sitemesh sẽ đổ danh sách món ăn từ home.jsp vào -->
+    <h1 style="color: red; text-align: center;">--- HEADER TEST ---</h1>
+    
+    
+    <!-- SiteMesh sẽ rót nội dung trang Home vào đây -->
     <sitemesh:write property='body'/>
     
-    <%@ include file="/commons/web/footer.jsp"%>
-
+    <h1 style="color: red; text-align: center;">--- FOOTER TEST ---</h1>
+    
+    
 </body>
 </html>

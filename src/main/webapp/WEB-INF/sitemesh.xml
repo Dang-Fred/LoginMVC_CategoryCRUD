@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sitemesh>
+    <!-- Thêm /decorators/ vào trước web.jsp -->
+    <mapping path="/*" name="web" decorator="/decorators/web.jsp"/>
+    <mapping path="/admin/*" name="admin" decorator="/decorators/admin.jsp"/>
     <mapping path="/login*" exclude="true"/>
-    <!-- Đường dẫn bắt buộc phải trỏ vào WEB-INF -->
-    <mapping path="/*" decorator="/WEB-INF/decorators/web.jsp"/>
+    <mapping path="/api*" exclude="true"/>
 </sitemesh>
