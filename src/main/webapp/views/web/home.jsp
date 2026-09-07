@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Sarab - Trang Chủ</title>\
+    <title>Sarab - Trang Chủ</title>
     
 </head>
 <body>

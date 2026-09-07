@@ -13,14 +13,14 @@
 <!-- Khung đỏ để nhận diện Layout đã ốp thành công -->
 <body style="border: 10px solid red; padding: 10px;">
     
-    <h1 style="color: red; text-align: center;">--- HEADER TEST ---</h1>
+    <%@ include file="/commons/web/header.jsp"%>
     
     
     <!-- SiteMesh sẽ rót nội dung trang Home vào đây -->
     <sitemesh:write property='body'/>
     
-    <h1 style="color: red; text-align: center;">--- FOOTER TEST ---</h1>
     
+    <%@ include file="/commons/web/footer.jsp"%>
     
 </body>
 </html>
